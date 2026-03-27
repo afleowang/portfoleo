@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leo Wang | Cybersecurity Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #00f2fe;
+    }
+    
+    * {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+    }
+    
+    .section-header {
+      position: relative;
+    }
+    
+    .section-header::after {
+      content: '';
+      position: absolute;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      bottom: -4px;
+      left: 0;
+      border-radius: 9999px;
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: #00f2fe;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0f1f] text-[#e6e9f0] min-h-screen overflow-x-hidden">
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#0a0f1f]/80 backdrop-blur-lg">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="px-6 py-5 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+          <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#4facfe] to-[#00f2fe] flex items-center justify-center text-white font-bold text-2xl shadow-lg">W</div>
+          <h1 class="text-2xl font-semibold tracking-tight">Leo Wang</h1>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+          <a href="#about" class="nav-link text-[#e6e9f0]/90 hover:text-white">About</a>
+          <a href="#skills" class="nav-link text-[#e6e9f0]/90 hover:text-white">Skills</a>
+          <a href="#experience" class="nav-link text-[#e6e9f0]/90 hover:text-white">Experience</a>
+          <a href="#projects" class="nav-link text-[#e6e9f0]/90 hover:text-white">Projects</a>
+          <a href="#contact" class="nav-link text-[#e6e9f0]/90 hover:text-white">Contact</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn"
+          class="md:hidden flex items-center justify-center w-10 h-10 rounded-2xl hover:bg-white/10 text-2xl">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-[#0a0f1f]/95 backdrop-blur-lg">
+      <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
+        <a href="#about" class="py-3 px-4 hover:bg-white/10 rounded-3xl">About Me</a>
+        <a href="#skills" class="py-3 px-4 hover:bg-white/10 rounded-3xl">Skills</a>
+        <a href="#experience" class="py-3 px-4 hover:bg-white/10 rounded-3xl">Experience</a>
+        <a href="#projects" class="py-3 px-4 hover:bg-white/10 rounded-3xl">Projects</a>
+        <a href="#contact" class="py-3 px-4 hover:bg-white/10 rounded-3xl">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="max-w-screen-2xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-x-2 px-4 py-2 rounded-3xl bg-white/5 text-sm font-medium border border-white/10">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f2fe] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-[#00f2fe]"></span>
+          </span>
+          Open to opportunities
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-none">
+          Leo Wang
+        </h1>
+        
+        <p class="text-2xl md:text-3xl font-light text-[#00f2fe]">
+          Cybersecurity • AI Training • Secure Systems
+        </p>
+        
+        <p class="max-w-lg text-lg text-[#e6e9f0]/80">
+		Building the future of secure, autonomous defense technology.
+                  </p>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" 
+             class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#0a0f1f] font-semibold rounded-3xl hover:scale-105">
+            Get in touch
+          </a>
+          <a href="#experience" 
+             class="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-white/60 font-medium rounded-3xl">
+            View my journey →
+          </a>
+        </div>
+        
+        <!-- Trust signals -->
+        <div class="flex items-center gap-x-8 text-sm opacity-70 pt-4">
+          <div>Intelligent defense</div>
+          <div>Inspired by Andril</div>
+          <div>Multilingual Engineer</div>
+        </div>
+      </div>
+
+      <!-- Right side visual -->
+      <div class="hidden md:flex justify-center">
+        <div class="glass rounded-3xl w-80 h-80 flex flex-col items-center justify-center border border-white/10 shadow-2xl relative">
+          <div class="text-8xl mb-6">🛡️</div>
+          <div class="text-center">
+            <div class="text-2xl font-semibold">Cyber + Defense</div>
+            <div class="text-[#00f2fe] text-sm tracking-widest">SECURE • AUTONOMOUS • MISSION-FOCUSED</div>
+          </div>
+          <!-- Subtle ring -->
+          <div class="absolute inset-0 rounded-3xl border border-[#00f2fe]/30 animate-[spin_25s_linear_infinite]"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-screen-2xl mx-auto px-6 py-20 border-t border-white/10">
+  <div class="grid md:grid-cols-12 gap-16">
+    
+    <!-- Left: About Text -->
+    <div class="md:col-span-5">
+      <h2 class="section-header text-4xl font-semibold mb-8">About Me</h2>
+	<div class="text-[#e6e9f0]/70 text-lg leading-relaxed">
+	I’m Leo, a technical operations specialist and cybersecurity student with experience supporting complex electromechanical systems in high-reliability environments. My work has required precision, accountability, and strict adherence to operational and security standards, while reinforcing the growing need for systems that are resilient, interconnected, and secure. This foundation led me to pursue cybersecurity, where I view security as a critical component of modern, intelligent technologies.
+	</div>
+        <div class="mt-8 text-[#e6e9f0]/70 text-lg leading-relaxed">
+	My long-term vision is to contribute to the development of secure, reliable AI-driven defense systems that can operate effectively in complex and high-stakes environments. I am seeking opportunities where I can combine my hands-on technical background with cybersecurity expertise to help design and protect intelligent systems that are both robust and mission-ready.        	        
+	</div>
+</div>
+
+    <!-- Right: Current Role + Education -->
+    <div class="md:col-span-7">
+      <div class="glass rounded-3xl p-9 md:p-12 border border-white/10 h-full flex flex-col">
+
+        <!-- Current Role -->
+        <div class="flex-1">
+          <div class="flex justify-between items-baseline mb-6">
+            <div class="text-[#00f2fe] text-sm font-medium tracking-widest">CURRENT ROLE</div>
+            <div class="text-xs opacity-60">July 2022 – Present</div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold">Technical Systems Specialist</h3>
+          <p class="text-[#e6e9f0]/80 mt-1">Federal Service</p>
+          
+          <div class="mt-7 text-[#e6e9f0]/80 leading-relaxed">
+            Troubleshoot and maintain <span class="font-semibold text-white">$988 million</span> complex electrical and mechanical systems, ensuring mission-ready status through precision diagnostics and repair.
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-white/10 my-10"></div>
+
+        <!-- Education -->
+        <div>
+          <div class="flex justify-between items-baseline mb-6">
+            <div class="text-[#00f2fe] text-sm font-medium tracking-widest">EDUCATION</div>
+            <div class="text-xs opacity-60">Class of 2027</div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold">Cybersecurity Student</h3>
+          <p class="text-[#e6e9f0]/80 mt-1">SUNY Canton – State University of New York</p>
+          
+          <p class="mt-5 text-[#e6e9f0]/80">
+            Relevant Coursework: Network Security, Ethical Hacking, Python Scripting
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="max-w-screen-2xl mx-auto px-6 py-20 bg-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-header text-4xl font-semibold mb-12 text-center">Skills &amp; Expertise</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">💻</span>
+          <span class="font-medium">HTML / CSS</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🐍</span>
+          <span class="font-medium">Python</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🌐</span>
+          <span class="font-medium">Networking</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🛫</span>
+          <span class="font-medium">Operational Planning</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🎯</span>
+          <span class="font-medium">Decisive Decision-Making</span>
+      	</div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🚨</span>
+          <span class="font-medium">Emergency Management</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">🔒</span>
+          <span class="font-medium">Risk Management &amp; OPSEC</span>
+        </div>
+        <div class="glass px-6 py-5 rounded-3xl flex items-center gap-x-3 border border-white/10">
+          <span class="text-2xl">📂</span>
+          <span class="font-medium">GitHub</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="mt-16">
+        <h3 class="text-[#00f2fe] text-sm font-medium mb-6 text-center">Languages</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="glass px-6 py-3 rounded-3xl text-center border border-white/10">
+            <div class="font-semibold">English</div>
+            <div class="text-xs opacity-60">Native</div>
+          </div>
+          <div class="glass px-6 py-3 rounded-3xl text-center border border-white/10">
+            <div class="font-semibold">Chinese (Mandarin)</div>
+            <div class="text-xs opacity-60">Native</div>
+          </div>
+          <div class="glass px-6 py-3 rounded-3xl text-center border border-white/10">
+            <div class="font-semibold">Japanese</div>
+            <div class="text-xs opacity-60">Professional Proficiency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="max-w-screen-2xl mx-auto px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-header text-4xl font-semibold mb-12">Experience</h2>
+      
+      <div class="space-y-12">
+        <!-- Job 1 -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-48 flex-shrink-0">
+            <div class="text-sm opacity-60">July 2022 – Present</div>
+            <div class="font-medium text-[#00f2fe]">Federal Service</div>
+          </div>
+          <div class="flex-1 glass rounded-3xl p-8 border border-white/10">
+            <h3 class="text-xl font-semibold">Risk Management &amp; Safety Compliance</h3>
+            <p class="mt-4 text-[#e6e9f0]/80">
+              Applied structured risk management methodologies to identify and mitigate operational risks. 
+              Daily user and administrator of secure enterprise systems — enforcing access controls, maintaining data integrity, 
+              and ensuring strict adherence to security and confidentiality protocols.
+            </p>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-48 flex-shrink-0">
+            <div class="text-sm opacity-60">January 2023 - March 2024</div>
+            <div class="font-medium text-[#00f2fe]">Federal Service</div>
+          </div>
+          <div class="flex-1 glass rounded-3xl p-8 border border-white/10">
+            <h3 class="text-xl font-semibold">Support Equipment Systems Technician</h3>
+            <p class="mt-4 text-[#e6e9f0]/80">
+	Lead structured inspections and risk-aware operational oversight for support equipment in mission-critical environments, ensuring procedural accountability through rigorous documentation, technical compliance, and clear communication while maintaining auditable records that support quality assurance.            </p>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-48 flex-shrink-0">
+            <div class="text-sm opacity-60">June 2026 - </div>
+            <div class="font-medium text-[#00f2fe]">COMPANY NAME</div>
+          </div>
+          <div class="flex-1 glass rounded-3xl p-8 border border-white/10">
+            <h3 class="text-xl font-semibold">AI Training</h3>
+            <p class="mt-4 text-[#e6e9f0]/80">
+              Coming Soon...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-screen-2xl mx-auto px-6 py-20 bg-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-header text-4xl font-semibold mb-12">Projects</h2>
+      
+      <div class="glass rounded-3xl p-8 border border-white/10">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h3 class="text-2xl font-semibold">Portfolio Website</h3>
+              <span class="px-4 py-1 text-xs font-medium bg-white/10 rounded-3xl">2026</span>
+            </div>
+            <p class="mt-6 text-[#e6e9f0]/80">
+              Designed and deployed this personal resume website that serves as an interactive portfolio, 
+              demonstrating web development fundamentals while maintaining an up-to-date platform for showcasing 
+              professional qualifications and achievements.
+            </p>
+          </div>
+          <div class="md:w-64 bg-[#0a0f1f] rounded-3xl p-6 text-center flex items-center justify-center border border-white/10">
+            <div class="text-center">
+              <div class="text-6xl mb-4">🌐</div>
+              <div class="text-[#00f2fe] font-medium">Live • Responsive • Modern</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-screen-2xl mx-auto px-6 py-20">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="section-header text-4xl font-semibold mb-6">Let's Connect</h2>
+      <p class="text-[#e6e9f0]/70 mb-10">Open to Cybersecurity, AI defense, AI training, and secure systems opportunities.</p>
+      
+      <div class="glass rounded-3xl p-10 border border-white/10 flex flex-col md:flex-row gap-8 items-center justify-center">
+        <button onclick="copyEmail(event)"
+          class="flex items-center gap-x-4 px-8 py-6 bg-white/10 hover:bg-white/20 rounded-3xl text-left w-full md:w-auto">
+          <span class="text-4xl">📧</span>
+          <div>
+            <div class="font-medium">My Email</div>
+            <div class="text-xs opacity-60">Click to copy</div>
+          </div>
+        </button>
+        
+        <a href="https://app.joinhandshake.com/profiles/ftp2ax" 
+           target="_blank"
+           class="flex items-center gap-x-4 px-8 py-6 bg-white/10 hover:bg-white/20 rounded-3xl text-left w-full md:w-auto">
+          <span class="text-4xl">🔗</span>
+          <div>
+            <div class="font-medium">Handshake Profile</div>
+            <div class="text-xs opacity-60">I'm on Handshake!</div>
+          </div>
+        </a>
+      </div>
+      
+      <p id="copy-msg" class="mt-6 text-sm font-medium text-[#00f2fe]"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#05070d] py-8 text-center text-xs opacity-50 border-t border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-6">
+      © 2026 Leo Wang • All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Tailwind configuration
+    function initializeTailwind() {
+      tailwind.config = {
+        content: [],
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00f2fe'
+            }
+          }
+        }
+      }
+    }
+    
+    // Mobile menu toggle
+    function initMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn')
+      const menu = document.getElementById('mobile-menu')
+      
+      btn.addEventListener('click', () => {
+        if (menu.classList.contains('hidden')) {
+          menu.style.display = 'block'
+          btn.innerHTML = '✕'
+        } else {
+          menu.style.display = 'none'
+          btn.innerHTML = '☰'
+        }
+      })
+    }
+    
+    // Email copy function
+    function copyEmail(e) {
+      e.preventDefault()
+      const email = "afleowang@gmail.com"
+      navigator.clipboard.writeText(email).then(() => {
+        const msg = document.getElementById("copy-msg")
+        msg.textContent = "✅ Email copied to clipboard"
+        setTimeout(() => {
+          msg.textContent = ""
+        }, 3000)
+      })
+    }
+    
+    // Smooth scrolling for nav links
+    function enableSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          if (this.getAttribute('href') === '#') return
+          e.preventDefault()
+          const target = document.querySelector(this.getAttribute('href'))
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            })
+            // Close mobile menu if open
+            const menu = document.getElementById('mobile-menu')
+            if (menu.style.display === 'block') {
+              menu.style.display = 'none'
+              document.getElementById('mobile-menu-btn').innerHTML = '☰'
+            }
+          }
+        })
+      })
+    }
+    
+    // Initialize everything
+    window.onload = function () {
+      initializeTailwind()
+      initMobileMenu()
+      enableSmoothScroll()
+      
+      // Console message for fun
+      console.log('%c🚀 Leo Wang Portfolio loaded – clean, dark, and ready for the future!', 'color:#00f2fe; font-family:Inter; font-size:12px')
+    }
+  </script>
+</body>
+</html>
